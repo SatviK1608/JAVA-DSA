@@ -22,10 +22,10 @@ public class BinarySearch {
 				break;
 			}
 			else if(arr[mid]>key){
-				high--;
+				high=mid-1;
 			}
 			else{
-				low++;
+				low=mid+1;
 			}
 		}
 		if(flag==0){
