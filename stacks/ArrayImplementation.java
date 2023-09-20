@@ -5,7 +5,6 @@ public class ArrayImplementation {
 	private int capacity;
 	private int[] array;
 	private int top;
-	private int size;
 
 	public ArrayImplementation() {
 		// TODO Auto-generated constructor stub
@@ -59,6 +58,7 @@ public class ArrayImplementation {
 		obj.pop();
 		System.out.println(obj.peek()+"\n");
 		
+		System.out.println("Elements of stack are");
 		while(!obj.isEmpty()){
 			System.out.println(obj.pop());
 		}
