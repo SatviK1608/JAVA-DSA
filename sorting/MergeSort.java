@@ -13,11 +13,12 @@ public class MergeSort {
 		int n2=high-mid;
 		int[] left = new int[n1];
 		int[] right = new int[n2];
+		int p=low,q=mid+1;
 		for(int i=0;i<n1;i++) {
-			left[i]=a[i+low];
+			left[i]=a[p++];
 		}
 		for(int i=0;i<n2;i++) {
-			right[i]=a[i+mid+1];
+			right[i]=a[q++];
 		}
 		int i=0,j=0,k=low;
 		while(i<n1&&j<n2) {
@@ -47,7 +48,7 @@ public class MergeSort {
 	}
 	
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+		
 		int [] arr = {5,4,3,2,1,9,10,23,41,49,69};
 		MergeSort obj = new MergeSort();
 		obj.mergeSort(arr,0,(arr.length-1));
