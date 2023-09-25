@@ -78,7 +78,7 @@ public class ImplementTwoStacksUsingArray {
 		stack.push2(3);
 		stack.push2(4);
 		stack.push2(5);
-		stack.push2(6);      //not be added as stack gets full
+		stack.push2(6);      //not added as stack gets full
 		
 		
 		while(!stack.isEmpty1()){
@@ -90,9 +90,7 @@ public class ImplementTwoStacksUsingArray {
 		while(!stack.isEmpty2()){
 			System.out.print(stack.pop2()+" ");
 		}
-			
 		
-
 	}
 
 }
