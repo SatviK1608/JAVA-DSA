@@ -111,6 +111,19 @@ public class LinkedList {
 		backwardTraversal(head.next);
 		System.out.print(head.data+"->");
 	}
+	
+
+	public Node reverse(){
+		Node curr=null,prev=null,nxt=head;
+		while(nxt!=null){
+			curr=nxt;       //shifts the current node to the nxt and nxt==curr(bcz links get broken as we do curr.next=prev so that is why to update curr we do curr=nxt and not curr=curr.next)
+			nxt=nxt.next;	//nxt now shifted to next node
+			curr.next=prev;	//curr node is linked with it's previous node
+			prev=curr;      //prev node is shifted to curr node and prev=curr
+		}
+		head=curr;          //changing the position of head
+		return head;
+	}
 
 	public static void main(String[] args) {
 		LinkedList obj=new LinkedList();
@@ -135,6 +148,9 @@ public class LinkedList {
 		
 		
 		System.out.println(obj.search(40));
+		
+		obj.reverse();
+		obj.show();
 		
 		
 
