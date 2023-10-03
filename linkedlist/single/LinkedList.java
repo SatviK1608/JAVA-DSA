@@ -11,6 +11,7 @@ public class LinkedList {
 			next=null;
 		}
 	}
+	
 	Node head,tail;
 
 	public LinkedList() {
