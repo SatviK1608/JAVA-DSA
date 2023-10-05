@@ -1,10 +1,8 @@
 package linkedlist.doubleList;
 
-public class DoubleLinkedList {
+public class DoublyLinkedList {
 
-	
-		
-		
+
 		 class Node{
 			 int value;
 			 Node next=null;
@@ -186,14 +184,19 @@ public class DoubleLinkedList {
 
 	public static void main(String[] args) {
 		
-		DoubleLinkedList obj=new DoubleLinkedList();
+		DoublyLinkedList obj=new DoublyLinkedList();
+		
+		
 		
 		obj.insertAtHead(30);
 		obj.insertAtHead(20);
 		obj.insertAtHead(10);
+		
+		
 		obj.insertAtEnd(40);
 		obj.insertAtEnd(50);
 		obj.insertAtEnd(60);
+		
 		
 		obj.insertAtPosition(1, 100);
 		obj.insertAtPosition(0, 5);
@@ -210,11 +213,12 @@ public class DoubleLinkedList {
 		obj.deleteAtPosition(2);
 		obj.deleteAtPosition(6);
 		
-		obj.search(40);
-		
 		
 		obj.showforward();
 		obj.showbackward();
+		
+		
+		obj.search(40);
 		
 		
 
