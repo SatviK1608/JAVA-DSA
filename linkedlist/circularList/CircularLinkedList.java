@@ -16,7 +16,6 @@ public class CircularLinkedList {
 	Node head;
 
 	public CircularLinkedList() {
-		// TODO Auto-generated constructor stub
 		head=null;
 	}
 	

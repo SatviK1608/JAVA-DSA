@@ -14,6 +14,33 @@ public class Questions {
 		 * check if list has cycle or not
 		 * 
 		 */
+		
+		
+		
+		//Floyds Algo -> Detect cycle or not
+			/*
+				Node slow=head,fast=head;
+				if(head==null)
+					return false;
+				while(fast!=null||fast.next!=null){
+					slow=slow.next;
+					fast=fast.next.next;
+					if(slow==fast)
+						return true;
+					
+				}
+				return false;
+			*/
+		
+		//Finding middle
+			/*			Node slow=head,fast=head;
+			 * 			if(head!=null)
+			 * 				while(fast!=null||fast.next!=null){
+			 * 					fast=fast.next.next;
+			 * 					slow=slow.next;
+			 * 				}
+			 * 			return slow.data;
+			 */	
 	}
 
 }
