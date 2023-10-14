@@ -4,11 +4,11 @@ import java.util.Arrays;
 
 public class ImplementKStacksUsingArray {
 	private int capacity;
-	private int k;
+	private int k;        //number of stacks
 	private int free_slot;
 	private int data[];
-	private int top[];
-	private int next[];
+	private int top[];   //keeps track of top of individual k stacks
+	private int next[];  //keeps track of next ele of stack(i.e. ele just below it in stack)
 	
 	public ImplementKStacksUsingArray(int capacity,int k) {
 		this.capacity=capacity;

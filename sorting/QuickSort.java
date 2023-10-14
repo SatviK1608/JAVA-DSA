@@ -11,15 +11,18 @@ public class QuickSort {
 		int pivot=arr[high];
 		int i=low-1;
 		for(int j=low;j<high;j++){
+			//in this we are trying to shift all ele smaller than pivot to it's left 
+			 //and keeping track of i such that we can get correct place of pivot
 			if(arr[j]<pivot){
 				i++;
-				int temp=arr[j];  //in this we are trying to shift all ele smaller than pivot to it's left and keeping track of i such that we can get correct place of pivot
+				int temp=arr[j];  
 				arr[j]=arr[i];
 				arr[i]=temp;
 			}
 		}
+		//placing pivot at its correct position and all ele to its left will be small and to its right will be large
 		int temp=arr[i+1];
-		arr[i+1]=arr[high];//placing pivot at its correct position and all ele to its left will be small and to its right will be large
+		arr[i+1]=arr[high];
 		arr[high]=temp;
 		return i+1;
 	}

@@ -47,6 +47,9 @@ public class Example01 {
 		int h=q.peek();
 		System.out.println("First ele: "+h);
 		
+		q.remove();
+		System.out.println("First ele: "+q.peek());
+		
 		Iterator<Integer> it=q.iterator();
 		while(it.hasNext()){
 			System.out.println(it.next());

@@ -16,13 +16,13 @@ public class SortStack {
 		Stack<Integer> s=new Stack<>();
 		
 		//adding ele to stack
-		s.push(5);
-		s.push(2);
-		s.push(7);
-		s.push(3);
-		s.push(8);
-		s.push(1);
 		s.push(6);
+		s.push(1);
+		s.push(8);
+		s.push(3);
+		s.push(7);
+		s.push(2);
+		s.push(5);
 		
 		//sorting the stack
 		Stack<Integer> temp_stack=new Stack<>();
@@ -46,6 +46,7 @@ public class SortStack {
 		
 		
 		/*        Original 												Temp
+		 *top->                                                          <-top
 		 * 5,2,7,3,8,1,6
 		 * 2,7,3,8,1,6													5
 		 * 5,7,3,8,1,6													2

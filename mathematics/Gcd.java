@@ -12,12 +12,10 @@ public class Gcd {
 		int a=10,b=5;
 		while(a%b!=0){
 			remainder=a%b;
-			
 			a=b;                       //just like long division
 			b=remainder;
 		}
 		gcd=b;
-		
 		System.out.println("Gcd: "+gcd);
 
 	}

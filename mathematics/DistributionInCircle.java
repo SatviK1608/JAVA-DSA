@@ -12,7 +12,14 @@ public class DistributionInCircle {
 		//c:Starting pos
 		//x:find the last position of the children who recieved a chocolate 
 		
-		int a=21,b=7,c=6;
+		int a=213,b=70,c=215;
+		
+		/*while(a!=0){
+			a--;
+			c++;
+			c=c%b;
+		}*/
+		System.out.println(c-1);
 		
 		int x=(c+a-1)%b==0?b:(c+a-1)%b;
 		System.out.println(x);

@@ -26,6 +26,9 @@ public class LinearProbing {
 		int start=index;
 		while(state[index]==1){
 			index=(index+1)%capacity;
+			if(state[index]==-1){
+				break;
+			}
 			if(index==start){
 				System.out.println("Hashtable is full please increase it's size");
 				return;
