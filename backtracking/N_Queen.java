@@ -42,6 +42,7 @@ package backtracking;
 	 * 
 	 */
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -106,101 +107,91 @@ public class N_Queen {
 		return iBoard;
 	}
 	
-	public void show_iBoard(int[][] _iBoard) {
+	public void show(ArrayList<ArrayList> ans) {
 
-		System.out.println();
-		
-		for(int i=0; i<N; i++) {
-			for(int j=0; j<N; j++) {		
-				System.out.print(_iBoard[i][j] + " ");
+		for(int i=0;i<ans.size();i++){
+			for(int j=0;j<ans.get(i).size();j++){
+				if(j%N==0){
+					System.out.println();
+				}
+				System.out.print(ans.get(i).get(j)+" ");
 			}
-			System.out.println();
+			System.out.println("\n");
 		}
 		
 	}
 	
-
-	
-	
-	
-	/*
-	 * isQueenSafe in a Column && isQueenSafe in a Column && isQueenSafe in a Diagonal
-	 */
-	//LOGIC BUIDING CODE - SUPPORTER
-	private boolean isSafe(int row, int col) {
-		 
-		int x, y;
-	        
-	    //checking if there is a queen in row or column
-	    for(x=0; x<N; x++) {
-	    	if((iBoard[row][x] == 1) || (iBoard[x][col] == 1)) {
-	    		return true;
-	        }
-	    }
-	    
-	    //checking for diagonals
-	    for(x=0; x<N; x++) {
-	    	for(y=0; y<N; y++) {	
-	                //For (2,3)
-	            	/*
-	            	 * 	(1,2)			(1,4)
-	            	 * 			(2,3)
-	            	 *  (3,2)			(3,4)
-	            	 * 
-	            	 * 	= (1+4) == (2+3)
-	            	 *  = (3+2) == (2+3)
-	            	 *  = (1-2) == (2-3)
-	            	 *  = (3-4) == (2-3)
-	            	 *    
-	            	 */
-	    		if(((x + y) == (row + col)) || ((x - y) == (row - col))) {
-	    			if(iBoard[x][y] == 1) {
-	    				return true;
-	                }
-	            }
-	        }
-	    
-	    }
-	        
-	    return false;
-
+	public boolean isSafe(int row,int col,int[][] iBoard,int n){
+		//in our solution we are filling queen from left to right in a particular row 
+		//so we need to check towards left only for same row
+		
+		
+		//in our solution we are placing one queen in a col so no need to check for col 
+		
+		int x=row,y=col;
+		while(y>=0){
+			if(iBoard[x][y]==1)
+				return false;
+			y--;
+		}
+		
+		
+		x=row;
+		y=col;
+		//diagonal
+		while(x<n&&y>=0){
+			if(iBoard[x][y]==1)
+				return false;
+			y--;
+			x++;
+		}
+		
+		
+		x=row;
+		y=col;
+		//diagonal
+		while(x>=0&&y>=0){
+			if(iBoard[x][y]==1)
+				return false;
+			y--;
+			x--;
+		}
+		
+		return true;
 	}
 	
+	public void addSolution(int[][] iBoard,ArrayList<ArrayList> ans,int n){
+		ArrayList<Integer> temp=new ArrayList<>();
+		for(int i=0;i<n;i++){
+			for(int j=0;j<n;j++){
+				temp.add(iBoard[i][j]);
+			}
+		}
+		ans.add(temp);
+	}
 	
-	/*
-	 * Place the Queen
-	 */
-	//LOGIC BUIDING CODE
-	public boolean place_nQueen(int n) {
-		    
-        //base case for n == 0
-        if(n==0) {
-            return true;
-        }
-        
-        for(int row=0; row<N; row++){
-        	
-            for(int col=0; col<N; col++){
-            	
-            	//Is it a safe to place a Queen here...?
-            	//if((!isSafe(row, col)) && (iBoard[row][col] != 1)){
-            	if((!isSafe(row, col))){
-                    		
-            		iBoard[row][col] = 1;
-                    
-                    //Can we put the next Queen with this arrangement? CALLING RECURSIVELY...
-                    if( place_nQueen(n-1) ){
-                        return true;
-                    }
-                            
-                    iBoard[row][col] = 0;
-                
-            	}
-            
-            }
-        }
+	public void solve(int col,ArrayList<ArrayList> ans,int[][] iBoard,int n){
 		
-		return false;
+		if(col==n){
+			addSolution(iBoard,ans,n);
+			return;
+		}
+		for(int row=0;row<n;row++){
+			if(isSafe(row,col,iBoard,n)){
+				iBoard[row][col]=1;
+				solve(col+1,ans,iBoard,n);
+				iBoard[row][col]=0;
+			}
+		}
+		
+	}
+	
+	public ArrayList<ArrayList> place_nQueen(int n) {
+		
+		ArrayList<ArrayList> ans=new ArrayList<>();
+		solve(0,ans,iBoard,n);
+		return ans;
+        
 	}
 	
 	
@@ -209,19 +200,14 @@ public class N_Queen {
 	public static void main(String[] args) {
 	
 		int N = 0;
+		ArrayList<ArrayList> ans;
 		N_Queen obj = new N_Queen(N);
 		
 		obj.create_iBoard(obj.getN());
-
 		
-		obj.show_iBoard(obj.get_iBoard());				//1. First: 	Get the Board as EMPTY
-	
-		obj.place_nQueen(obj.getN());					//2. Second: 	Place the Queen on the Board
-			
-		obj.show_iBoard(obj.get_iBoard());				//3. Third: 	Show the Board with Queens
-
+		ans=obj.place_nQueen(obj.getN());	
 		
-		
+		obj.show(ans);
 	}
 
 }

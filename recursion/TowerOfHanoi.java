@@ -21,7 +21,7 @@ public class TowerOfHanoi {
 	
 	public void recur(int n,char source,char aux,char dest){
 		if(n==1){
-			System.out.println("Move disc 1 from ROD "+source+" to ROD "+dest);
+			System.out.println("Move disc "+n+" from ROD "+source+" to ROD "+dest);
 			return;
 		}
 		recur(n-1,source,dest,aux);

@@ -8,17 +8,26 @@ public class PrintingAllPossiblePermutations {
 		
 	}
 	
-	public void printPermutation(String s,String permu){
+	public void printPermutation(String s,int i){
 		
-		if(s.length()==0){
-			System.out.println(permu);
+		if(i==s.length()-1){
+			System.out.println(s);
 			return;
 		}
-		for(int i=0;i<s.length();i++){
-			char currChar=s.charAt(i);
-			String newSubString=s.substring(0,i)+s.substring(i+1,s.length());
+		for(int j=i;j<s.length();j++){
 			
-			printPermutation(newSubString, permu+currChar);
+			char[] ch=s.toCharArray();
+			int temp=ch[i];
+			ch[i]=ch[j];
+			ch[j]=ch[i];
+			s=ch.toString();
+			printPermutation(s,i+1);
+			
+			temp=ch[i];
+			ch[i]=ch[j];
+			ch[j]=ch[i];
+			s=ch.toString();
+			
 		}
 		
 	}
@@ -26,7 +35,7 @@ public class PrintingAllPossiblePermutations {
 	public static void main(String[] args) {
 		
 		PrintingAllPossiblePermutations obj=new PrintingAllPossiblePermutations();
-		obj.printPermutation("ABC", "");
+		obj.printPermutation("ABC", 0);
 		
 	}
 

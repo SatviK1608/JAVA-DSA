@@ -8,6 +8,7 @@ public class RatInAMaze {
 	}
 	public void Ratmaze(int[][] maze,int row,int col,String solution,boolean[][] visited){
 		
+		
 		if(row==maze.length-1&&col==maze.length-1){
 			System.out.println(solution);
 			return;
@@ -34,8 +35,16 @@ public class RatInAMaze {
 		Ratmaze(maze,row,col+1,solution+"R",visited);
 		
 		visited[row][col]=false;   //if moved back from the cell
-		//false is done,so for next new path we can go from that cell
+//		//false is done,so for next new path we can go from that cell
 		
+		
+		
+		
+		
+		
+		
+		
+
 		
 	}
 
@@ -55,7 +64,9 @@ public class RatInAMaze {
 		//visited is marked true if rat has already checked all the paths from the given cell
 		//so this avoids the rat to get stuck into a loop where he will be visiting same cell again & again
 		
+		
 		RatInAMaze obj=new RatInAMaze();
+		if(maze[0][0]!=1)
 		obj.Ratmaze(maze,0,0,"",visited);
 		
 //		for(int i=0;i<4;i++){
