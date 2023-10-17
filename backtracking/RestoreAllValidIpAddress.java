@@ -56,6 +56,7 @@ public class RestoreAllValidIpAddress {
 			return;
 		}
 		
+		
 		if(currentIp.size()>=4){
 			return;
 		}
