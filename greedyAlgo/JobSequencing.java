@@ -13,21 +13,7 @@ public class JobSequencing{
 	
 	public void getMax(ArrayList<Job> s){
 	
-//		Collections.sort(s);
-		
-		int totalJobs=s.size();
-		boolean[] slots=new boolean[totalJobs];
-		int sequence[] =new int[totalJobs];
-		
-		for(int i=0;i<totalJobs;i++){
-			for(int j=s.get(i).deadline-1;j>=0;j--){
-				if(!slots[j]){
-					sequence[j]=1;
-					slots[j]=true;
-					break;
-				}
-			}
-		}
+//		
 		
 	}
 }
@@ -40,7 +26,7 @@ class Job {
 	 * be completed within it's deadline
 	 * 
 	 * 
-	 * 		    1 2 3 4 5 6 7
+	 * 		    	1 2 3 4 5 6 7
 	 * 	p		5 2 4 1 8 0 3
 	 * 	d		2 2 4 1 3 3 1
 	 * 
