@@ -14,11 +14,14 @@ public class LargestNumber {
 		for(int i=0;i<numbers.length;i++){
 			sArray[i]=String.valueOf(numbers[i]);
 		}
-//		Arrays.sort(sArray,(num1,num2)->(num1+num2).compareTo(num2+num1));  
+		
+		//Arrays.sort(sArray,(num1,num2)->(num1+num2).compareTo(num2+num1));  
+		
+		
 		//descending order
 		Arrays.sort(sArray,new Comparator<String>() {
             public int compare(String hero1, String hero2) {
-                return (hero2+hero1).compareTo(hero1+hero2); //10,2 => 210 or 102
+                return (hero2+hero1).compareTo(hero1+hero2); //10,2 => 210 or 102s
             }
         });
 		
