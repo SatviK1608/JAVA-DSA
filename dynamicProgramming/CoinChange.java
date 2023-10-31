@@ -47,7 +47,7 @@ public class CoinChange {
  *    {1,3,4}
  *    For rs=6
  *    
- * 	  Greedy gives 4+1+1=3
+ * 	  Greedy gives   4+1+1=3
  * 	  Dynamic gives  3+3=2	   
  * 
  */
