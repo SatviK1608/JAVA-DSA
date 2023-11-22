@@ -20,7 +20,7 @@ public class HeapSort1 {
 	
 	public void heapify(int size,int root){
 		
-		int smallest=root;   //First time we don't know but after that root will be the smallest
+		int smallest=root;   
 		int leftChild=2*root+1;
 		int rightChild=2*root+2;
 		
@@ -78,7 +78,7 @@ public class HeapSort1 {
 	}
 
 	public static void main(String[] args) {
-		int[] arr={1,5,9,8,2,3};		
+		int[] arr={1,5,9,8,2,3,10,82,89,99,45};		
 		HeapSort1 obj=new HeapSort1(arr);
 		
 		System.out.print("Unsorted Heap: ");

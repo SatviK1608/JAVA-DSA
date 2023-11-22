@@ -31,7 +31,7 @@ public class HeapSort {
 	
 	public void heapify(int size,int root){
 		
-		int largest=root;   //First time we don't know but after that root will be the largest
+		int largest=root;   
 		int leftChild=2*root+1;
 		int rightChild=2*root+2;
 		
