@@ -1,5 +1,8 @@
 package stringAlgos;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class KMP {
 	
 //	Knuth-Morris-Pratt Algorithm
@@ -65,6 +68,9 @@ public class KMP {
 		// TODO Auto-generated constructor stub
 		s=new String(a);
 		pat=new String(b);
+		
+		
+		
 		m=pat.length();
 		n=s.length();
 		lps=new int[m];
@@ -94,6 +100,19 @@ public class KMP {
 	
 	public void KMPsearch(){
 		computelps();
+//		Pattern pattern=Pattern.compile(pat);
+//		Matcher matcher=pattern.matcher(s);
+//		while(matcher.find()){
+//			System.out.println(matcher.start());
+//		}
+		int index=0;
+		 while(index != -1){
+	            index = s.indexOf(pat,index);
+	            if (index != -1) {
+	                System.out.println(index);
+	                index++;
+	            }
+	        }
 		
 //		values in lps array
 		for(int i=0;i<m;i++){
