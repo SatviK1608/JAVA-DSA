@@ -38,7 +38,7 @@ public class RestoreAllValidIpAddress {
 	public boolean isValidPart(String part){
 		
 		
-		//if length not 0
+		//if length is 0
 		//if length exceeds more than 3
 		//if part starts from 0 and there is further character following it
 		//if part is greater than 255

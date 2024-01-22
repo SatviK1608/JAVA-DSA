@@ -49,6 +49,7 @@ public class RatInAMaze {
 	}
 
 	public static void main(String[] args) {
+		//0->open, 1->closed
 		int maze[][]={
 						{0,1,0,0},
 						{0,0,0,0},

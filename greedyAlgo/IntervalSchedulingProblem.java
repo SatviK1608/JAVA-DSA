@@ -17,7 +17,7 @@ public class IntervalSchedulingProblem {
 		
 		//arrivalTime must be in sorted
 		
-		i=0;//set i to 0 as every first taks is always selected
+		i=0;//set i to 0 as every first task is always selected
 		
 		
 		System.out.print(i);

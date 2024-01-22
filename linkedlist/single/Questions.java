@@ -22,7 +22,7 @@ public class Questions {
 				Node slow=head,fast=head;
 				if(head==null)
 					return false;
-				while(fast!=null||fast.next!=null){
+				while(fast!=null&&fast.next!=null){
 					slow=slow.next;
 					fast=fast.next.next;
 					if(slow==fast)
@@ -35,7 +35,7 @@ public class Questions {
 		//Finding middle
 			/*			Node slow=head,fast=head;
 			 * 			if(head!=null)
-			 * 				while(fast!=null||fast.next!=null){
+			 * 				while(fast!=null&&fast.next!=null){
 			 * 					fast=fast.next.next;
 			 * 					slow=slow.next;
 			 * 				}

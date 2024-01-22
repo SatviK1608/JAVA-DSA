@@ -21,8 +21,11 @@ public class PrintingAllPossiblePermutations {
 			ch[i]=ch[j];
 			ch[j]=ch[i];
 			s=ch.toString();
+			
+			
 			printPermutation(s,i+1);
 			
+			//backtrack
 			temp=ch[i];
 			ch[i]=ch[j];
 			ch[j]=ch[i];
