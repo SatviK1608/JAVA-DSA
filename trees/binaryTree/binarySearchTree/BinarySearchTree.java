@@ -248,6 +248,7 @@ public class BinarySearchTree {
     	
     	
     }
+    
     void topview(Node root){
     	
     	Node curr=root;
